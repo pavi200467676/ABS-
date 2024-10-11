@@ -1,0 +1,297 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #121212, #181818), url(ba1.jpg);
+    background-image: url(ba1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #eaeaea;
+    overflow-x: hidden;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    animation: fadeInBody 2s ease forwards, zoomInBackground 20s ease-in-out infinite alternate;
+}
+
+/* Fade-in body background */
+@keyframes fadeInBody {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Background image zoom */
+@keyframes zoomInBackground {
+    0% { background-size: 100%; }
+    100% { background-size: 110%; }
+}
+
+/* Container Layout with slide-in */
+.container {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+    justify-content: space-between;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+
+/* Sidebar */
+aside {
+    background: rgba(43, 43, 43, 0.7);
+    color: #ffffff;
+    padding: 25px;
+    width: 250px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    animation: slideInSidebar 0.5s ease-out forwards;
+}
+
+/* Sidebar Slide-in animation */
+@keyframes slideInSidebar {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+/* Navbar Hover Effects */
+nav ul li a {
+    position: relative;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: transform 0.4s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ff7f8f;
+    transition: width 0.4s ease;
+}
+
+nav ul li a:hover {
+    color: #ff7f8f;
+    transform: translateY(-5px);
+}
+
+nav ul li a:hover::before { width: 100%; }
+
+/* 3D Button Hover */
+button {
+    cursor: pointer;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff7f8f, #ff3b5c);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: bounce 1s infinite alternate, pulse 2s infinite;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+    50% { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); }
+    100% { transform: scale(1); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+}
+
+button:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ff9eb4, #ff6f8d);
+}
+
+/* Product Box Styling */
+.product-box {
+    background: rgba(26, 26, 26, 0.85);
+    border-radius: 20px;
+    padding: 30px;
+    width: 80%;
+    max-width: 1200px;
+    height: 600px;
+    margin: 50px auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.product-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* Contact Form Box */
+.form-box {
+    background: rgba(26, 26, 26, 0.85);
+    color: #ffffff;
+    padding: 25px;
+    width: 60%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    animation: slideInForm 0.5s ease-out forwards;
+}
+
+@keyframes slideInForm {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+
+.form-box h2 {
+    color: #ff7f8f;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(34, 34, 34, 0.85);
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff7f8f;
+    box-shadow: 0 0 10px rgba(255, 127, 143, 0.5);
+}
+
+textarea {
+    height: 150px;
+}
+
+/* Table hover animation */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(43, 43, 43, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    margin-top: 30px;
+    animation: tableSlideIn 0.6s ease-out;
+}
+
+@keyframes tableSlideIn {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+th {
+    background-color: rgba(50, 50, 50, 0.8);
+    color: #ff7f8f;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td { transition: background-color 0.3s ease; }
+
+tr:hover td {
+    background-color: rgba(192, 192, 192, 0.1);
+    transform: scale(1.05) rotateX(5deg);
+}
+
+/* Glowing Text Animation */
+.glow-text {
+    color: #ff7f8f;
+    text-shadow: 0 0 10px #ff7f8f, 0 0 20px #ff7f8f, 0 0 30px #ff3b5c;
+    animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+    0% { text-shadow: 0 0 20px #ff7f8f, 0 0 40px #ff7f8f; color: #ff7f8f; }
+    100% { text-shadow: 0 0 30px #ff9eb4, 0 0 50px #ff6f8d; color: #ff6f8d; }
+}
+
+/* Input Ripple Effect */
+.input-ripple {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.input-ripple input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(26, 26, 26, 0.85);
+    color: #fff;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+.input-ripple input:focus {
+    box-shadow: 0 0 15px rgba(255, 127, 143, 0.5);
+}
+
+.input-ripple input::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 127, 143, 0.3);
+    border-radius: 50%;
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    0% { transform: scale(0); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
